@@ -24,8 +24,10 @@ namespace CsClasses
             Console.Write("Write mode (WriteLine or Write(default WriteLine)) :");
             string mode=Console.ReadLine();
 
-            if(mode=="Write")CustomOutput.ColorWriteLine(text,color=="red"?ConsoleColor.Red:ConsoleColor.Green);
-            else CustomOutput.ColorWrite(text,color=="green"?ConsoleColor.Red:ConsoleColor.Green);
+            if(mode=="Write")CustomOutput.ColorWrite(text,color=="red"?ConsoleColor.Red:ConsoleColor.Green);
+            else CustomOutput.ColorWriteLine(text,color=="red"?ConsoleColor.Red:ConsoleColor.Green);
+
+            Console.WriteLine("End\n");
         }
     }
 }
