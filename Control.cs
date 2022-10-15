@@ -9,7 +9,8 @@ namespace CsClasses
             while(true)
             {
                 Console.Write("class :");
-                string classname=Console.ReadLine();
+                string classname;
+                classname=Console.ReadLine()!;
                 if (classname=="CustomOutput")RunCustomOutput();
                 else if (classname=="CommandRunner")RunCommandRunner();
                 else if (classname=="quit")break;
@@ -20,11 +21,11 @@ namespace CsClasses
         private static void RunCustomOutput()
         {
             Console.Write("text :");
-            string text=Console.ReadLine();
+            string text=Console.ReadLine()!;
             Console.Write("Color (green or red(default green)) :");
-            string color=Console.ReadLine();
+            string color=Console.ReadLine()!;
             Console.Write("Write mode (WriteLine or Write(default WriteLine)) :");
-            string mode=Console.ReadLine();
+            string mode=Console.ReadLine()!;
 
             if(mode=="Write")CustomOutput.ColorWrite(text,color=="red"?ConsoleColor.Red:ConsoleColor.Green);
             else CustomOutput.ColorWriteLine(text,color=="red"?ConsoleColor.Red:ConsoleColor.Green);
@@ -35,9 +36,11 @@ namespace CsClasses
         private static void RunCommandRunner()
         {
             Console.Write("Running mode :");
-            int mode=int.Parse(Console.ReadLine());
+            int mode;
+            try{mode=int.Parse(Console.ReadLine()!);}
+            catch{mode=0;}
             Console.Write("Command :");
-            string command=Console.ReadLine();
+            string command=Console.ReadLine()!;
             switch (mode)
             {
                 case 0:
