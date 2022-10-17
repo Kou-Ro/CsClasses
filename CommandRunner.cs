@@ -6,7 +6,9 @@ namespace CsClasses
 {
     internal class CommandRunner
     {
+        //Configuration of running processes.
         private static ProcessStartInfo SetStartInfo(bool read,string command)
+
         {
             string[] returns = new string[2];
 
@@ -19,6 +21,7 @@ namespace CsClasses
             return psi;
         }
 
+        //Display all outputs
         public static void Run(string command)
         {
             var pro=new Process();
@@ -27,6 +30,7 @@ namespace CsClasses
             pro.WaitForExit();
         }
 
+        //Get output in string array.[0]:Standard Output [1]:Standard Error Output
         public static string[] RunReadOut(string command)
         {
             string[] returns=new string[2];
